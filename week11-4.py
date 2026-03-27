@@ -1,0 +1,17 @@
+import tkinter as tk
+root = tk.Tk()
+root.title("Selection App")
+var1 = tk.IntVar()
+check = tk.Checkbutton(root, text="Accept Terms", variable=var1)
+check.pack()
+gender = tk.StringVar()
+radio1 = tk.Radiobutton(root, text="Male", variable=gender, value="Male")
+radio2 = tk.Radiobutton(root, text="Female", variable=gender, value="Female")
+radio1.pack()
+radio2.pack()
+def show_selection():
+    print("Check:", var1.get())
+    print("Gender:", gender.get())
+btn = tk.Button(root, text="Submit", command=show_selection)
+btn.pack()
+root.mainloop()
